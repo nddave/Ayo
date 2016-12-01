@@ -17,7 +17,7 @@ The quick function you may want to start with is the 'match' function, where mat
 
 > ayo.core=> (match "john" "maria")
 
-This will output the detials that are gained by evaluating "john" and "maria", through their likes, dislikes, tastes, etc. The code, for base case and ease of operating, uses 10 inbuild characters who have been assigned particular values of characteristics. You can checkout the list of characters in this program in the file [prefcore.clj](https://github.com/nddave). You can also edit the list of characters and their characteristics to get your desired output. You may also pull data of people using online libraries that allow to easily connect to social media. These 10 inbuilt characters can be found in the 'people' vector in the prefcore.clj file.
+This will output the detials that are gained by evaluating "john" and "maria", through their likes, dislikes, tastes, etc. The code, for base case and ease of operating, uses 10 inbuild characters who have been assigned particular values of characteristics. You can checkout the list of characters in this program in the file [prefcore.clj](https://github.com/nddave).
 
 ```clojure
 (def people
@@ -32,4 +32,39 @@ This will output the detials that are gained by evaluating "john" and "maria", t
 		[girl "adva"]
 		[girl "carly"]
 		[girl "kaya"]))
+```
+
+You can also edit the list of characters and their characteristics to get your desired output. You may also pull data of people using online libraries that allow to easily connect to social media.
+
+The code sets basic rules for the AI to build upon. These rules are then inferred using logic programming to make further deductions.
+
+```clojure
+;; It is inferred that one's personality is largely determined by the music they like to listen
+;; Based on this theory, the rules of personality are set as follows:
+;;
+;; 1. melancholic people like electronic music
+;; 2. choleric people like screaming and rap music
+;; 3. phlegmatic people like bright and happy music
+;; 4. sanguime people like pop music
+;;
+;; The databse below defines boys' and girls' choices
+;; so the the AI can best define which people have the same personalities.
+(defn personality-rules[x]
+	(macro/symbol-macrolet [_ (lvar)] ;; Using a macrolet allows a single instruction of "_" to automatically expand into "(lvar)"
+		(all
+			(membero [_ _ "melancholic" "electronic"] x) ;; There are 4 lvars; each represent a unique definition.
+			(membero [_ _ "choleric" "screaming"] x) ;;	_boy-name_ _girl-name_ _personality_ _song_
+			(membero [_ _ "phlegmatic" "bright and happy"] x) ;; membero is a feature of core.logic that allows to define one element as a member of a set
+			(membero [_ _ "choleric" "rap"] x)
+			(membero [_ _ "sanguine" "pop"] x)
+			(membero ["john" _ _ "electronic"] x)
+			(membero ["charlie" _ _ "rap"] x)
+			(membero ["max" _ _ "pop"] x)
+			(membero ["armin" _ _ "bright and happy"] x)
+			(membero ["gavin" _ _ "screaming"] x)
+			(membero [_ "maria" _ "electronic"] x)
+			(membero [_ "carly" _ "rap"] x)
+			(membero [_ "kaya" _ "pop"] x)
+			(membero [_ "adva" _ "bright and happy"] x)
+			(membero [_ "sarah" _ "screaming"] x))))
 ```
