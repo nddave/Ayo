@@ -68,6 +68,6 @@ The code sets basic rules for the AI to build upon. These rules are then inferre
 			(membero [_ "adva" _ "bright and happy"] x)
 			(membero [_ "sarah" _ "screaming"] x))))
 ```
-License information
-=======
+# License information
+
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). Program is created by [Nirman Dave](http://www.nirmandave.com) as a form of assignment for Artificial Intelligence CS263 course at Hampshire College, Amherst MA.
