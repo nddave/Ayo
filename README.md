@@ -17,7 +17,7 @@ The quick function you may want to start with is the 'match' function, where mat
 
 > ayo.core=> (match "john" "maria")
 
-This will output the detials that are gained by evaluating "john" and "maria", through their likes, dislikes, tastes, etc. The code, for base case and ease of operating, uses 10 inbuild characters who have been assigned particular values of characteristics. You can checkout the list of characters in this program in the file [prefcore.clj](https://github.com/nddave).
+This will output the detials that are gained by evaluating "john" and "maria", through their likes, dislikes, tastes, etc. The code, for base case and ease of operating, uses 10 inbuild characters who have been assigned particular values of characteristics. You can checkout the list of characters in this program in the file [prefcore.clj](https://github.com/nddave/Ayo/blob/master/src/ayo/prefcore.clj).
 
 ```clojure
 (def people
@@ -68,6 +68,9 @@ The code sets basic rules for the AI to build upon. These rules are then inferre
 			(membero [_ "adva" _ "bright and happy"] x)
 			(membero [_ "sarah" _ "screaming"] x))))
 ```
+
+You can find all project code files [here](https://github.com/nddave/Ayo/tree/master/src/ayo).
+
 # License information
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
