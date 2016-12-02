@@ -71,7 +71,7 @@ The code sets basic rules for the AI to build upon. These rules are then inferre
 
 You can find all project code files [here](https://github.com/nddave/Ayo/tree/master/src/ayo).
 
-# License information
+# License information ![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
 
