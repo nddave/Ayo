@@ -14,7 +14,7 @@ The Ayo is quick and easy to setup. Assuming you have the following downloaded, 
 After this, download the Ayo.zip file, and run it with REPL.
 
 The quick function you may want to start with is the 'match' function, where match takes in two arguments. Each of the arguments are strings that represent names of two individuals who need to be paired. 
-```
+```clojure
 ayo.core=> (match "john" "maria")
 ```
 This will output the detials that are gained by evaluating "john" and "maria", through their likes, dislikes, tastes, etc. The code, for base case and ease of operating, uses 10 inbuild characters who have been assigned particular values of characteristics. You can checkout the list of characters in this program in the file [prefcore.clj](https://github.com/nddave/Ayo/blob/master/src/ayo/prefcore.clj).
